@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Minha Página</title>
+  <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+  
+</head>
+
+<body>
+   {% if request.user.is_authenticated %}
+    <b>Bem-vindo, {{request.user.username}}</b> <br> 
+    <a href="/users/logout">Sair</a>
+  {% endif %}
+  
+  <h1>João Vitor Castro Cascão</h1>
+
+  <p class = "paragrafo" style = text-align: justify;>
+    <span style = "color: green">Lista </span> dos <b style = "color: red">filmes</b> que <u>eu</u> vi esse ano com <i>nota</i>
+  </p>
+
+  <!-- <h2> Filmes vistos:</h2>
+  <ul class = "listinha">
+    <li>Oppenheimer - 10</li>
+    <li>All Quiet on the Western Front - 9.5</li>
+    <li>The Menu - 7.5</li>
+    <li>The Whale - 7.0</li>
+    <li>Incantation - 9.0</li>
+  </ul> -->
+<h2> Filmes Vistos:</h2>
+
+  <ul>
+    {% for filme in Filmes %}
+     <li> 
+       {{filme.title}} 
+       <a href = "/filmes/update/{{ filme.id }}">Atualizar </a>
+        <a href = "/filmes/update/{{ filme.id }}">Remover</a>
+     </li>
+    {% endfor %}
+  </ul>
+<a href = "/filmes">Adicionar novo Filme</a>
+    <h2> Livros Lidos:</h2>
+  <!-- <ol>
+    <li>O Grande Hotel Budapeste</li>
+    <li>All Quiet on the Western Front</li>
+    <li>Incantation</li>
+    <li>Green Book</li>
+    <li>The Menu</li>
+  </ol> -->
+  
+   <ol>
+    {% for livro in livros %}
+     <li> {{livro.title}}
+        <a href = "/livros/update/{{ livro.id }}">Atualizar </a>
+        <a href = "/livros/update/{{ livro.id }}">Remover</a>
+     </li>
+    {% endfor %}
+  </ol>
+  <a href = "/livros">Adicionar novo Livro</a>
+  <h3> Me sigam no <a href="https://letterboxd.com/Casc06/" target="_blank">letter box</a>  </h3>
+
+<table border="1">
+    <tr>
+        <td>Filme</td>
+        <td>Nota</td>
+        <td>Ano que eu assisti</td>
+    </tr>
+    <tr>
+        <td>Oppenheimer</td>
+        <td>10</td>
+        <td>2023</td>
+    </tr>
+    <tr>
+        <td>All Quiet on the Western Front</td>
+        <td>9.5</td>
+        <td>2023</td>
+    </tr>
+</table>
+
+  <div class = "centralizado">
+
+  <div><img src="{% static 'Images/melhores.jpg'%}" width="900"></div>
+
+  <div><img src="{% static 'Images/melhores filmes.jpg'%}" width="900"></div>
+  </div>
+</body>
+
+</html>
+

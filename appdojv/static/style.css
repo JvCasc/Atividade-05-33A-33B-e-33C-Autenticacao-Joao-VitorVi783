@@ -1,0 +1,27 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.centralizado{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.paragrafo{
+  font-family: "Raleway", monospace;
+}
+
+h2 {
+  font-family: 'Quicksand', sans-serif;
+}
+
+h1 {
+  font-family: "Quicksand", monospace;
+}
+
+.listinha{
+  font-family: "Quicksand", monospace;
+}

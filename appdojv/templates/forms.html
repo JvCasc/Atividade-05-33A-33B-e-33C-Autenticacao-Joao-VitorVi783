@@ -1,0 +1,23 @@
+<h1> Adicionar Filmes</h1>
+
+<form method = "post">
+  {% csrf_token %}
+  <div>
+    <label> Título:</label>
+    <input name = "title" value="{{ filme.title }}">
+  </div>
+   <div>
+    <label> Diretor:</label>
+     <input name = "director"value="{{ filme.director }}">
+  </div>
+   <div>
+    <label> Gênero:</label>
+     <input name = "genre" value="{{ filme.genre }}">
+  </div>
+   <div>
+    <label> Data de lançamento:</label>
+     <input type = "date" name = "release_date" value="{{ filme.release_date }}">
+  </div>
+
+  <input type = "submit" value = "Registrar">
+</form>

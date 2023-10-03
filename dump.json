@@ -1,0 +1,1 @@
+[{"model": "appdojv.filmes", "pk": 1, "fields": {"title": "Oppenheimer", "director": "Christopher Nolan", "genre": "História", "release_date": "2023-06-20"}}, {"model": "appdojv.filmes", "pk": 2, "fields": {"title": "O Grande Hotel Budapeste", "director": "Wes Anderson", "genre": "Comédia", "release_date": "2014-06-03"}}]

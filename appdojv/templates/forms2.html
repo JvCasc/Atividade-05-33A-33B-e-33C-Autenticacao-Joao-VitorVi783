@@ -1,0 +1,22 @@
+<h1> Adicionar Livros</h1>
+<form method = "post">
+  {% csrf_token %}
+  <div>
+    <label> Título:</label>
+    <input name = "title" value="{{ livro.title }}">
+  </div>
+   <div>
+    <label> Autor:</label>
+     <input name = "director"value="{{ livro.director }}">
+  </div>
+   <div>
+    <label> Gênero:</label>
+     <input name = "genre" value="{{ livro.genre}}">
+  </div>
+   <div>
+    <label> Nota :</label>
+     <input type = "nota" name = "rate" value="{{ livro.nota }}">
+  </div>
+
+  <input type = "submit" value = "Registrar">
+</form>
